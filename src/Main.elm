@@ -1,7 +1,14 @@
+-- Dependencies:
+--
+--   elm install elm/svg
+
 module Main exposing (..)
 
-import Html exposing (text)
+import Svg exposing (..)
+import Svg.Attributes exposing (..)
 
 
 main =
-  text "Hello!"
+  svg [ width "300", height "100" ]
+    [ text_ [ y "100", fontSize "50" ]
+      [ text "Hello" ]]
