@@ -4,13 +4,25 @@
 
 module Main exposing (..)
 
-import Html exposing (div, button, text)
+import Html exposing (Html, div, button, text)
 import Html.Attributes exposing (style)
 import Svg exposing (..)
 import Svg.Attributes exposing (..)
 
 
-main =
+main = view
+
+
+-- MODEL
+
+
+-- UPDATE
+
+
+-- VIEW
+
+view : Html Never
+view =
   div [] [
   button [ Html.Attributes.style "height" "20px",
            Html.Attributes.style "padding" "0",
