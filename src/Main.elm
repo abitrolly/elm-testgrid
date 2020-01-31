@@ -10,10 +10,17 @@ import Svg exposing (..)
 import Svg.Attributes exposing (..)
 
 
-main = view
+main = view init
 
 
 -- MODEL
+
+type alias Model =
+  { boxcolor : String }
+
+init : Model
+init =
+  { boxcolor = "black" }
 
 
 -- UPDATE
@@ -21,8 +28,8 @@ main = view
 
 -- VIEW
 
-view : Html Never
-view =
+view : Model -> Html Never
+view model =
   div [] [
   button [ Html.Attributes.style "height" "20px",
            Html.Attributes.style "padding" "0",
@@ -34,7 +41,7 @@ view =
          [ Html.text ">>" ],
   svg
     [ width "400", height "100" ]
-    [ rect [ width "10", height "10" ] []
+    [ rect [ width "10", height "10", fill model.boxcolor ] []
     , rect [ x "10", y "10", width "10", height "10" ] []
     , rect [ x "20", y "10", width "10", height "10" ] []
     , rect [ x "30", y "10", width "10", height "10" ] []
