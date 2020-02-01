@@ -36,7 +36,13 @@ update : Msg -> Model -> Model
 update msg model =
   case msg of
     Toggle ->
-      { model | boxcolor = "white" }
+      case model.boxcolor of
+        "white" ->
+          { model | boxcolor = "black" }
+        "black" ->
+          { model | boxcolor = "white" }
+        _ ->
+          { model | boxcolor = "" }
 
 
 -- VIEW

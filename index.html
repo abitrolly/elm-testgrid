@@ -5182,9 +5182,21 @@ var $elm$browser$Browser$sandbox = function (impl) {
 };
 var $author$project$Main$update = F2(
 	function (msg, model) {
-		return _Utils_update(
-			model,
-			{boxcolor: 'white'});
+		var _v1 = model.boxcolor;
+		switch (_v1) {
+			case 'white':
+				return _Utils_update(
+					model,
+					{boxcolor: 'black'});
+			case 'black':
+				return _Utils_update(
+					model,
+					{boxcolor: 'white'});
+			default:
+				return _Utils_update(
+					model,
+					{boxcolor: ''});
+		}
 	});
 var $author$project$Main$Toggle = {$: 'Toggle'};
 var $elm$html$Html$button = _VirtualDom_node('button');
