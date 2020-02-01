@@ -4,13 +4,18 @@
 
 module Main exposing (..)
 
+
+import Browser
 import Html exposing (Html, div, button, text)
 import Html.Attributes exposing (style)
+import Html.Events exposing (onClick)
+
 import Svg exposing (..)
 import Svg.Attributes exposing (..)
 
 
-main = view init
+main =
+  Browser.sandbox { init = init, update = update, view = view }
 
 
 -- MODEL
@@ -25,13 +30,23 @@ init =
 
 -- UPDATE
 
+type Msg = Toggle
+
+update : Msg -> Model -> Model
+update msg model =
+  case msg of
+    Toggle ->
+      { model | boxcolor = "white" }
+
 
 -- VIEW
 
-view : Model -> Html Never
+view : Model -> Html Msg
 view model =
   div [] [
-  button [ Html.Attributes.style "height" "20px",
+  button [ onClick Toggle,
+
+           Html.Attributes.style "height" "20px",
            Html.Attributes.style "padding" "0",
            -- trying to keep text label inside button
            Html.Attributes.style "line-height" "0",
