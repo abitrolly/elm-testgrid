@@ -8,7 +8,7 @@ module Main exposing (..)
 import Browser
 import Html exposing (Html, button, div, text)
 import Html.Attributes exposing (style)
-import Html.Events exposing (onClick)
+import Html.Events exposing (onMouseDown)
 import Svg exposing (..)
 import Svg.Attributes exposing (..)
 
@@ -61,7 +61,7 @@ view : Model -> Html Msg
 view model =
     div []
         [ button
-            [ onClick Toggle
+            [ onMouseDown Toggle
             , Html.Attributes.style "height" "20px"
             , Html.Attributes.style "padding" "0"
             , -- trying to keep text label inside button

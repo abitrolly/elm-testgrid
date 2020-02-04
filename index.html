@@ -5214,10 +5214,10 @@ var $elm$html$Html$Events$on = F2(
 			event,
 			$elm$virtual_dom$VirtualDom$Normal(decoder));
 	});
-var $elm$html$Html$Events$onClick = function (msg) {
+var $elm$html$Html$Events$onMouseDown = function (msg) {
 	return A2(
 		$elm$html$Html$Events$on,
-		'click',
+		'mousedown',
 		$elm$json$Json$Decode$succeed(msg));
 };
 var $elm$svg$Svg$trustedNode = _VirtualDom_nodeNS('http://www.w3.org/2000/svg');
@@ -5240,7 +5240,7 @@ var $author$project$Main$view = function (model) {
 				$elm$html$Html$button,
 				_List_fromArray(
 					[
-						$elm$html$Html$Events$onClick($author$project$Main$Toggle),
+						$elm$html$Html$Events$onMouseDown($author$project$Main$Toggle),
 						A2($elm$html$Html$Attributes$style, 'height', '20px'),
 						A2($elm$html$Html$Attributes$style, 'padding', '0'),
 						A2($elm$html$Html$Attributes$style, 'line-height', '0'),
